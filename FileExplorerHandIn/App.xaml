@@ -1,0 +1,65 @@
+﻿<Application x:Class="FileExplorerHandIn.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FileExplorerHandIn"
+             xmlns:model="clr-namespace:FileExplorerHandIn.Model"
+             StartupUri="View/MainWindow.xaml">
+    <Application.Resources>
+        
+        <DataTemplate DataType="{x:Type model:FolderNode}">
+            <Grid Background="Red">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="{Binding Name}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch"/>
+                <Label Content="folderNode" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"/>
+            </Grid>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type model:ImageNode}">
+            <Grid Background="Aqua">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="{Binding Name}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch"/>
+                <Label Content="ImageNode" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"/>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type model:TextNode}">
+            <Grid Background="Purple">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="{Binding Name}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch"/>
+                <Label Content="TextNode" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"/>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type model:UnknownNode}">
+            <Grid Background="Beige">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="{Binding Name}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch"/>
+                <Label Content="UnknowNode" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"/>
+            </Grid>
+        </DataTemplate>
+    </Application.Resources>
+</Application>
